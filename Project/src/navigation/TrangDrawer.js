@@ -37,18 +37,18 @@ export default class TrangHomeDN extends React.Component {
       <Drawer.Navigator
         drawerContent={(props) => <DrawerContent {...props}></DrawerContent>}
         initialRouteName="HomeStackScreen"
-        headerMode={'none'}>
+        options={{headerShown: false}}>
         <Drawer.Screen
           name="HomeStackScreen"
           options={{headerShown: false}}
           component={HomeStackScreen}></Drawer.Screen>
         <Drawer.Screen
           name="TongHopStackScreen"
-          options={{headerShown: false}}
+          // options={{headerShown: false}}
           component={TongHopStackScreen}></Drawer.Screen>
         <Drawer.Screen
           name="HomeSauKhiDNStackScreen"
-          options={{headerShown: false}}
+          // options={{headerShown: false}}
           component={HomeSauKhiDNStackScreen}></Drawer.Screen>
       </Drawer.Navigator>
       // </NavigationContainer>
@@ -68,13 +68,13 @@ const HomeStackScreen = () => {
   );
 };
 
-const TongHopStackScreen = () => {
+const TongHopStackScreen = (props) => {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
         name="ScreensTongHop"
         headerMode="none"
-        component={ScreensTongHop}></HomeStack.Screen>
+        component={<ScreensTongHopp {...props} />}></HomeStack.Screen>
     </HomeStack.Navigator>
   );
 };

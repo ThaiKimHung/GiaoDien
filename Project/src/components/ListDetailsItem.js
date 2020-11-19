@@ -11,12 +11,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class listItem extends React.Component {
   render() {
-    const {onPress, data} = this.props;
-    const {loai, hinh, name, location, thongtinmota} = data;
+    const {onPress, item = {}} = this.props;
+    console.log('----props----aaaaaaaaaaa', item);
+    const {loai, hinh, name, location, thongtinmota} = item;
     return (
       <View style={{marginLeft: 10, marginRight: 10, marginTop: 5}}>
         <View style={styles.khungLoai}>
-          <Text style={styles.textLoai}>{loai}</Text>
+          {/* <Text style={styles.textLoai}>{loai}</Text> */}
         </View>
         <TouchableOpacity style={styles.khungFLItemBu}>
           <View style={styles.khungFLItemNho}>

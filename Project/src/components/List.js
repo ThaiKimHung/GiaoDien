@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
 import ListItem from './ListItem';
 export default class List extends React.Component {
-  renderItem = ({item}) => {
+  renderItem = ({item, index}) => {
     const Item = this.props.item;
-    return <Item data={item} />;
+    return <Item item={item} key={index} />;
   };
 
   keyExtractor = (item) => String(item.key);

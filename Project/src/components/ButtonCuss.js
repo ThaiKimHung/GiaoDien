@@ -17,6 +17,7 @@ const ButtonCuss = ({image, name, temp, hoatdong}) => (
     style={styles.itemContainer}
     onPress={() => temp.navigation.navigate(hoatdong)}>
     <Image source={image} style={styles.itemImage} />
+    {console.log('........... log temp......', temp)}
     <Text style={styles.itemName} numberOfLines={2}>
       {name}
     </Text>

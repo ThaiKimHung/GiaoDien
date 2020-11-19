@@ -10,9 +10,12 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class listItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    const {onPress, data} = this.props;
-    const {loai, hinh, name, location} = data;
+    const {onPress, item} = this.props;
+    const {loai, hinh, name, location} = item;
     return (
       <View style={{marginLeft: 10, marginRight: 10, marginTop: 5}}>
         <View style={styles.khungLoai}>

@@ -20,14 +20,14 @@ const timkiem = require('../assets/icon_timKiem.png');
 const height = Dimensions.get('screen').height;
 const width = Dimensions.get('screen').width;
 //make a Component
-const Header = ({temp, headerText}) => {
+const Header = ({temp, headerText, nthis}) => {
   // const {headerStyle, bgHeader} = styles;
-
+  console.log('nthis cua ma hinh :', nthis);
   return (
     <View style={styles.bgHeader}>
       <TouchableOpacity
         onPress={() => {
-          // temp.navigation.openDrawer();
+          nthis.props.navigation.toggleDrawer();
         }}>
         <Image source={iconDrawer} style={styles.icon}></Image>
       </TouchableOpacity>

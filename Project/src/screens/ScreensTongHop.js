@@ -28,27 +28,28 @@ export default class ScreensTongHop extends Component {
     super(props);
   }
 
-  goToDetails = (item) => {
-    this.props.navigation.navigate('ScreenDetails', item.data);
+  goToDetails = (props) => {
+    // alert(1);
+    console.log('props-----------------', props);
+    this.props.navigation.navigate('ScreenDetails', {item: props.item});
   };
 
   render() {
     this.props.navigation;
     return (
       <View style={styles.container}>
-        <Header headerText={'Title App'} temp={this.props} />
+        <Header nthis={this} headerText={'Title App'} />
         {/** phần tổng hợp */}
-        <FLTongHopNgang />
+        {/* <FLTongHopNgang /> */}
 
         {/** phần flastlist */}
         <View style={styles.containerFLData}>
           <List
             data={DataFlatList}
-            // item={(props) => (
-            //    <ListItem {...props} onPress={this.goToDetails(props)} />
-
-            // )}
-            item={ListItem}
+            item={(props) => (
+              <ListItem {...props} onPress={() => this.goToDetails(props)} />
+            )}
+            // item={ListItem}
           />
         </View>
       </View>
@@ -59,9 +60,10 @@ export default class ScreensTongHop extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   containerFLData: {
-    flex: 8,
-    backgroundColor: '#C0C0C080',
+    flex: 1,
+    backgroundColor: 'red',
   },
 });

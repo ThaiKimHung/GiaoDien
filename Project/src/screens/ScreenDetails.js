@@ -27,7 +27,12 @@ const width = Dimensions.get('screen').width;
 export default class ScreensTongHop extends Component {
   constructor(props) {
     super(props);
-    // this.state = {};
+    this.item = this.props.route.params?.item;
+    // this.state = {}
+    // console
+  }
+  componentDidMount() {
+    console.log(' propssssssssss', this.props);
   }
   // phần flatlist
   renderItem = ({item}) => {
@@ -42,7 +47,10 @@ export default class ScreensTongHop extends Component {
         {/** phần tổng hợp */}
         {/* <FLTongHopNgang /> */}
         {/** phần flastlist */}
-        <ListItem data={this.props.route.params}></ListItem>
+        {this.props.route.params.item ? (
+          <ListItem item={this.props.route.params?.item}></ListItem>
+        ) : null}
+
         {/* <View style={styles.containerFLData}> */}
         <List data={DataFlatList} item={ListDetailsItem} />
         {/* </View> */}

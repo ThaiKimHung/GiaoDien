@@ -13,6 +13,7 @@ import {
   TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import FontSize from '../components/size';
 const background = require('../assets/backgroundTong.png');
 const logo = require('../assets/lologo.png');
 
@@ -20,7 +21,7 @@ function CusTomDangNhap({temp}) {
   return (
     <View style={styles.ContainerDangNhap}>
       <View style={styles.khung}>
-        <Text style={styles.Title}>
+        <Text style={{fontSize: FontSize.reText(12)}}>
           Vui lòng sử dụng tài khoản đã đăng ký để đăng nhập
         </Text>
         <View>
